@@ -1,0 +1,13 @@
+<br>
+<br>
+<br>
+<br>
+<h1> Teachers of School of Learning </h1>
+
+<div class="teachers">
+  <% @teachers.each do |teacher| %>
+    <div id="teacher-<%=teacher.id%>">
+      <%= teacher.name %> <br>
+    </div>
+  <% end %>
+</div>
