@@ -18,7 +18,7 @@ RSpec.describe Student do
       visit "/students"
 
       within ".students" do
-        within ".student-#{student1.id}" do
+        within "#student-#{student1.id}" do
           expect(page).to have_content("Quincy Jones")
           expect(page).to have_content("Off Track to Graduate: No")
           expect(page).to have_content("Max Classes: 6")          
