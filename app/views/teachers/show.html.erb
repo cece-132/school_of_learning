@@ -1,0 +1,10 @@
+Name: <%= @teacher.name %>
+License Issued: <%= @teacher.license_issued.strftime("%m/%d/%y") %>
+License Renewal: <% if @teacher.renew_license == false %>
+                    <%= "No" %>
+                  <% else %>
+                    <%= "Yes" %>
+                  <% end %>
+Maximum Students: <%= @teacher.max_students %>
+Start Date: <%= @teacher.created_at.strftime("%m/%d/%y") %>
+Last Update: <%= @teacher.updated_at.strftime("%m/%d/%y") %>
