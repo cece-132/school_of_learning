@@ -1,0 +1,13 @@
+<br>
+<br>
+<br>
+<br>
+<h1> Teachers of School of Learning </h1>
+
+<div class="teachers">
+  <% @teachers.each do |teacher| %>
+    <div id="teacher-<%=teacher.id%>">
+      <%=link_to "#{teacher.name}", "/teachers/#{teacher.id}" %> <br>
+    </div>
+  <% end %>
+</div>
