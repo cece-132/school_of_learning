@@ -7,7 +7,7 @@
 <div class="teachers">
   <% @teachers.each do |teacher| %>
     <div id="teacher-<%=teacher.id%>">
-      <%= teacher.name %> <br>
+      <%=link_to "#{teacher.name}", "/teachers/#{teacher.id}" %> <br>
     </div>
   <% end %>
 </div>
