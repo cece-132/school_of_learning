@@ -1,0 +1,18 @@
+<%= @teacher.name %> students<br>
+<br>
+<br>
+<br>
+<br>
+<div class="students">
+  <% @students.each do |student| %>
+    <div id="student-<%=student.id%>">
+      Student Name: <%=link_to "#{student.name}", "/students/#{student.id}" %> <br>
+      Off Track to Graduate: <% if student.otg == false %>
+                                <%= "No" %>
+                             <% else %>
+                                <%= "Yes" %>
+                             <% end %>
+      Max Classes: <%= student.max_classes %>
+      </div>
+  <% end %>
+</div>

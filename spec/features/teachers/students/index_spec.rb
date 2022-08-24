@@ -39,8 +39,13 @@ RSpec.describe Teacher do
       visit "/teachers/#{teacher1.id}/students"
 
       within ".students" do
-        within "#students-#{student1.id}" do
-          
+        within "#student-#{student1.id}" do
+          expect(page).to have_content("Quincey Jones")
+          expect(page).to have_content("No")
+          expect(page).to have_content("6")
+
+          expect(page).to_not have_content("Aliya Blackmon")
+          expect(page).to_not have_content("Prince Miles")
         end
       end
     end

@@ -5,6 +5,5 @@ class TeachersController < ApplicationController
 
   def show
     @teacher = Teacher.find(params[:teacher_id])
-    @students = @teacher.students
   end
 end
