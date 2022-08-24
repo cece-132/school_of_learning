@@ -47,6 +47,7 @@ RSpec.describe Teacher do
           expect(page).to_not have_content("Aliya Blackmon")
           expect(page).to_not have_content("Prince Miles")
         end
+        expect(page).to_not have_content("Aliya Blackmon")
       end
     end
   end
