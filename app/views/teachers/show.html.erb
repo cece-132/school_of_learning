@@ -7,6 +7,7 @@ License Renewal: <% if @teacher.renew_license == false %>
                     <%= "Yes" %>
                   <% end %>
 Maximum Students: <%= @teacher.max_students %>
+Current Number of Students: <%= @teacher.students.count %>
 <br>
 <br>
 <%= link_to "View Students", "/teachers/#{@teacher.id}/students" %>

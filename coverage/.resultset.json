@@ -269,11 +269,11 @@
         "lines": [
           1,
           1,
-          3,
+          2,
           null,
           null,
           1,
-          0,
+          3,
           null,
           null
         ]
@@ -283,8 +283,20 @@
           1,
           null
         ]
+      },
+      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/models/student.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1661361314
+    "timestamp": 1661362212
   }
 }
