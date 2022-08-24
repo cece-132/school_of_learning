@@ -7,7 +7,8 @@
 <div class="teachers">
   <% @teachers.each do |teacher| %>
     <div id="teacher-<%=teacher.id%>">
-      <%=link_to "#{teacher.name}", "/teachers/#{teacher.id}" %> <br>
+      <%=link_to "#{teacher.name}", "/teachers/#{teacher.id}" %>,
+      Started At: <%= teacher.created_at.strftime("%m/%d/%y") %> <br>
     </div>
   <% end %>
 </div>

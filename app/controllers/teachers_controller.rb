@@ -1,6 +1,5 @@
 class TeachersController < ApplicationController
   def index
-    binding.pry
     @teachers = Teacher.order(:created_at)
   end
 

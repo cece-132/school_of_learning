@@ -50,9 +50,15 @@ RSpec.describe Teacher do
       visit "/teachers"
 
       within ".teachers" do
-        expect(teacher1).to appear_before(teacher2)
-        expect(teacher2).to appear_before(teacher3)
-        expect(teacher3).to appear_after(teacher1)
+        expect(teacher1.name).to appear_before(teacher2.name)
+        expect(teacher2.name).to appear_before(teacher3.name)
+        expect(teacher3.name).to_not appear_before(teacher1.name)
+      end
+
+      within ".teachers" do
+        within "#teacher-#{teacher1.id}" do
+          expect(page).to have_content("Phyllis Waters, Started At: #{teacher1.created_at.strftime("%m/%d/%y")}")
+        end
       end
     end
   end
