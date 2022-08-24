@@ -33,5 +33,59 @@ RSpec.describe Teacher do
         expect(page).to have_link("Peter Rosas")
       end
     end
+
+    it 'can sort by created_at' do
+      # As a visitor
+      # When I visit the Teacher index,
+      # I see that records are ordered by most recently created first
+      # And next to each of the records I see when it was created
+
+      teacher1 = Teacher.create!(name: "Phyllis Waters", license_issued: Time.now,
+        renew_license: false, max_students: 32)
+      teacher2 = Teacher.create!(name: "Paul Whitemon", license_issued: Time.now,
+        renew_license: false, max_students: 32)
+      teacher3 = Teacher.create!(name: "Peter Rosas", license_issued: Time.now,
+          renew_license: false, max_students: 32)      
+      
+      visit "/teachers"
+
+      within ".teachers" do
+        expect(teacher1.name).to appear_before(teacher2.name)
+        expect(teacher2.name).to appear_before(teacher3.name)
+        expect(teacher3.name).to_not appear_before(teacher1.name)
+      end
+
+      within ".teachers" do
+        within "#teacher-#{teacher1.id}" do
+          expect(page).to have_content("Phyllis Waters, Started At: #{teacher1.created_at.strftime("%m/%d/%y")}")
+        end
+      end
+    end
+
+    it 'has a navbar links' do
+      teacher1 = Teacher.create!(name: "Phyllis Waters", license_issued: Time.now,
+        renew_license: false, max_students: 32)
+      teacher2 = Teacher.create!(name: "Paul Whitemon", license_issued: Time.now,
+        renew_license: false, max_students: 32)
+
+      student1 = Student.create!(name: "Quincy Jones", otg: false, max_classes: 6,
+                                teacher_id: teacher1.id)
+      student2 = Student.create!(name: "Aliya Blackmon", otg: false, max_classes: 8,
+                                teacher_id: teacher2.id)
+      student3 = Student.create!(name: "Prince Miles", otg: false, max_classes: 5,
+                                teacher_id: teacher1.id)
+
+      visit "/teachers"
+
+      expect(page).to have_link("Students")
+      click_on "Students"
+      expect(current_path).to eq("/students")
+
+      visit "/students"
+
+      expect(page).to have_link("Teachers")
+      click_on "Teachers"
+      expect(current_path).to eq("/teachers")
+    end
   end
 end
