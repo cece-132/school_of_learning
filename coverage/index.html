@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-08-25T15:17:37-06:00">2022-08-25T15:17:37-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-08-25T17:09:22-06:00">2022-08-25T17:09:22-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  96.39%
+  90.32%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
-       <span class="green">
-         1.08
+       <span class="yellow">
+         1.0
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>83</b> relevant lines,
-    <span class="green"><b>80</b> lines covered</span> and
-    <span class="red"><b>3</b> lines missed. </span>
+    <b>93</b> relevant lines,
+    <span class="green"><b>84</b> lines covered</span> and
+    <span class="red"><b>9</b> lines missed. </span>
     (<span class="green">
-  96.39%
+  90.32%
 </span>
 )
   </div>
@@ -95,22 +95,22 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#b4f04289a4d1106380e7ff1c06061cba854d5884" class="src_link" title="app/controllers/teacher_students_controller.rb">app/controllers/teacher_students_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">7</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">4</td>
+            <td class="cell--number">21</td>
+            <td class="cell--number">12</td>
+            <td class="cell--number">12</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
+            <td class="cell--number">1.58</td>
             
           </tr>
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#e608475d5f4a0b9781a0a8ef5afa4d96b8857c68" class="src_link" title="app/controllers/teachers_controller.rb">app/controllers/teachers_controller.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">88.89 %</td>
+            <td class="red strong cell--number t-file__coverage">55.56 %</td>
             <td class="cell--number">33</td>
             <td class="cell--number">18</td>
-            <td class="cell--number">16</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1.33</td>
+            <td class="cell--number">10</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">0.56</td>
             
           </tr>
         
@@ -304,9 +304,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#fe89098c9ed2711077449faa3b0f766cb3ab4611" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">16</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">10</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">12</td>
+            <td class="cell--number">12</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -526,8 +526,8 @@
     
 
     <div class="t-line-summary">
-      <b>4</b> relevant lines.
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>12</b> relevant lines.
+      <span class="green"><b>12</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -561,19 +561,8 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="3">
-            
-            
-
-            
-
-            <code class="ruby">    #can probably have within TeachersControllers through if-statement</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="4" data-linenumber="3">
+            <span class="hits">4</span>
             
 
             
@@ -583,8 +572,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="4" data-linenumber="4">
+            <span class="hits">4</span>
             
 
             
@@ -594,7 +583,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="6">
+          <li class="never" data-hits="" data-linenumber="5">
             
             
 
@@ -605,7 +594,172 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
+          <li class="never" data-hits="" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def new</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="8">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    @teacher = Teacher.find(params[:teacher_id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def create</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="12">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    new_student = Student.create(teacher_student_params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    redirect_to &quot;/teachers/#{params[:teacher_id]}/students&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="18">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def teacher_student_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="19">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    params.permit(:name, :otg, :max_classes, :teacher_id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
             
             
 
@@ -624,8 +778,8 @@
   <div class="header">
     <h3>app/controllers/teachers_controller.rb</h3>
     <h4>
-      <span class="yellow">
-  88.89%
+      <span class="red">
+  55.56%
 </span>
 
       lines covered
@@ -635,8 +789,8 @@
 
     <div class="t-line-summary">
       <b>18</b> relevant lines.
-      <span class="green"><b>16</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <span class="green"><b>10</b> lines covered</span> and
+      <span class="red"><b>8</b> lines missed.</span>
     </div>
 
     
@@ -669,8 +823,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="3">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
             
 
             
@@ -713,8 +867,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="7">
-            <span class="hits">7</span>
+          <li class="missed" data-hits="0" data-linenumber="7">
+            
             
 
             
@@ -845,8 +999,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="19">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="19">
+            
             
 
             
@@ -889,8 +1043,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="23">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="23">
+            
             
 
             
@@ -900,8 +1054,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="24">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="24">
+            
             
 
             
@@ -911,8 +1065,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="25">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="25">
+            
             
 
             
@@ -977,8 +1131,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="31">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="31">
+            
             
 
             
@@ -3667,8 +3821,8 @@
     
 
     <div class="t-line-summary">
-      <b>10</b> relevant lines.
-      <span class="green"><b>10</b> lines covered</span> and
+      <b>12</b> relevant lines.
+      <span class="green"><b>12</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -3801,13 +3955,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="12">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">  post &#39;/teachers/:teacher_id/students&#39;, to: &#39;teacher_students#create&#39;</code>
           </li>
         </div>
       
@@ -3818,23 +3972,12 @@
 
             
 
-            <code class="ruby">  get &#39;/students&#39;, to: &#39;students#index&#39;</code>
+            <code class="ruby">  get &#39;/teachers/:teacher_id/students/new&#39;, to: &#39;teacher_students#new&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  get &#39;/students/:student_id&#39;, to: &#39;students#show&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="14">
             
             
 
@@ -3845,7 +3988,40 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="16">
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  get &#39;/students&#39;, to: &#39;students#index&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  get &#39;/students/:student_id&#39;, to: &#39;students#show&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
