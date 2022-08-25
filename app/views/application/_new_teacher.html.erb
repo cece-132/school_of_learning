@@ -1,0 +1,27 @@
+<br>
+<%= render "layouts/navbar" %>
+<br>
+<br>
+<br>
+<%= form_with url: path, method: method, local: true do |f| %>
+
+  <%= f.label :name, "Name" %><br>
+  <%= f.text_field :name %>
+<br>
+<br>
+  <%= f.label :license_issued, "When was the teaching license issued?" %><br>
+  <%= f.date_field :license_issued, as: :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control'%>
+<br>
+<br>
+  <%= f.label :renew_license, "Does the teachers license need renewal within the next 6 months?" %> <br>
+  <%= f.select :renew_license, options_for_select([true, false]), class: 'form-control' %>
+<br>
+<br>
+  <%= f.label :max_students, "Max Students per class:" %><br>
+  <%= f.number_field :max_students, within: 15...40 %>
+<br>
+<br>
+  <%= f.submit button_text %>
+<br>
+<br>
+<% end %>

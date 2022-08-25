@@ -6,4 +6,8 @@ class TeachersController < ApplicationController
   def show
     @teacher = Teacher.find(params[:teacher_id])
   end
+
+  def new
+
+  end
 end
