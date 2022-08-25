@@ -17,7 +17,18 @@ RSpec.describe Teacher do
 
       visit "/teachers/new"
       
-      save_and_open_page
+      fill_in 'Name', with: 'Shirley Temple', exact: true
+      fill_in "When was the teaching license issued?", with: Time.now, exact: true
+      select 'false', from: "Does the teachers license need renewal within the next 6 months?"
+      fill_in "Max Students per class:", with: 22, exact: true
+
+      click_button "Submit"
+
+      expect(current_path).to eq("/teachers")
+
+      within('.teachers') do
+        expect(page).to have_content('Shirley Temple')
+      end
     end
   end
 end
