@@ -18,4 +18,7 @@ Current Number of Students: <%= @teacher.students.count %>
 <%= link_to "View Students", "/teachers/#{@teacher.id}/students" %>
 <br>
 <br>
+<%= link_to "Update Teacher", "/teachers/#{@teacher.id}/edit" %>
+<br>
+<br>
 Last Update: <%= @teacher.updated_at.strftime("%m/%d/%y") %>
