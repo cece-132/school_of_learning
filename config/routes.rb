@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/teachers', to: 'teachers#create'
   get '/teachers/new', to: 'teachers#new'
   get '/teachers/:teacher_id', to: 'teachers#show'
+  patch '/teachers/:teacher_id', to: 'teachers#update'
+  get '/teachers/:teacher_id/edit', to: 'teachers#edit'
 
   get '/teachers/:teacher_id/students', to: 'teacher_students#index'
 
