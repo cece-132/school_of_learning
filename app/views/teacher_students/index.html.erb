@@ -6,6 +6,7 @@
 <%= @teacher.name %> students<br>
 <br>
 <br>
+<%= link_to "Off Track to Graduate", :sort => "otg" %>
 <br>
 <br>
 <div class="students">
@@ -18,7 +19,7 @@
                                 <%= "Yes" %>
                              <% end %>
       Max Classes: <%= student.max_classes %>
-      </div>
+    </div>
   <% end %>
 </div>
 <br>

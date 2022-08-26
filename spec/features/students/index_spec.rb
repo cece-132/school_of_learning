@@ -41,15 +41,19 @@ RSpec.describe Student do
   
         visit "/students"
 
-        expect(page).to have_link("Students")
-        click_on "Students"
-        expect(current_path).to eq("/students")
+        within ".topnav" do
+          expect(page).to have_link("Students")
+          click_link("Students")
+          expect(current_path).to eq("/students")
+        end
 
-        visit "/students"
+        within(".topnav") do
+          visit "/students"
 
-        expect(page).to have_link("Teachers")
-        click_on "Teachers"
-        expect(current_path).to eq("/teachers")
+          expect(page).to have_link("Teachers")
+          click_link("Teachers")
+          expect(current_path).to eq("/teachers")
+        end
     end
 
     it 'has link to sort true records' do

@@ -2,10 +2,12 @@ class StudentsController < ApplicationController
   def index
     @search = Student.ransack(params[:q])
     @students = @search.result(distinct: true)
-    if params[:q]["s"] == "otg asc" 
-      @students = Student.where(otg:true)
-    else #params[:q]["s"] == "otg desc" || params[:q].blank? 
-      @students = Student.all
+    if params[:q].blank?
+      @students = @students.order(:created_at)
+    elsif params[:q]["s"] == "otg asc" 
+      @students = @students.where(otg:true)
+    else #params[:q]["s"] == "otg desc"
+      @students = @students.order(:created_at)
     end
   end
 

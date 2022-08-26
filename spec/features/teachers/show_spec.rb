@@ -142,8 +142,8 @@ RSpec.describe Teacher do
       student3 = Student.create!(name: "Prince Miles", otg: false, max_classes: 5,
                                 teacher_id: teacher1.id)
                                 
-      visit "/teachers/#{teacher1.id}"
-
+      visit "/teachers/#{teacher1.id}/edit"
+      
       fill_in 'Name', with: 'Shirley Temple', exact: true
       fill_in "When was the teaching license issued?", with: Time.now, exact: true
       select 'false', from: "Does the teachers license need renewal within the next 6 months?"
