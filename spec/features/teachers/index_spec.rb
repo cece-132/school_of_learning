@@ -158,5 +158,33 @@ RSpec.describe Teacher do
       end
 
     end
+
+    it 'can delete a teacher' do
+      teacher1 = Teacher.create!(name: "Phyllis Waters", license_issued: Time.now,
+        renew_license: false, max_students: 32)
+      teacher2 = Teacher.create!(name: "Abby Whitemon", license_issued: Time.now,
+        renew_license: false, max_students: 32)
+
+      student1 = Student.create!(name: "Quincy Jones", otg: false, max_classes: 6,
+                                teacher_id: teacher1.id)
+      student2 = Student.create!(name: "Aliya Blackmon", otg: false, max_classes: 8,
+                                teacher_id: teacher2.id)
+      student3 = Student.create!(name: "Prince Miles", otg: false, max_classes: 5,
+                                teacher_id: teacher1.id)
+
+      visit "/teachers"
+      within ".teachers" do
+        within "#teacher-#{teacher1.id}" do
+          expect(page).to have_content("Delete")
+          click_link "Delete"
+          expect(current_path).to eq("/teachers")
+        end
+      end
+      
+      within ".teachers" do
+        expect(page).to_not have_content("#{teacher1.name}")
+      end
+
+    end
   end
 end
