@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/teachers/new', to: 'teachers#new'
   get '/teachers/:teacher_id', to: 'teachers#show'
   patch '/teachers/:teacher_id', to: 'teachers#update'
+  delete '/teachers/:teacher_id', to: 'teachers#destroy'
   get '/teachers/:teacher_id/edit', to: 'teachers#edit'
 
   get '/teachers/:teacher_id/students', to: 'teacher_students#index'
