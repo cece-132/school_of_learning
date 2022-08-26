@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-08-26T09:24:02-06:00">2022-08-26T09:24:02-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-08-26T11:32:28-06:00">2022-08-26T11:32:28-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  91.3%
+  91.25%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
-       <span class="yellow">
-         1.0
+       <span class="red">
+         0.96
        </span>
     </span> hits/line
     )
@@ -39,15 +39,15 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>21</b> files in total.
+    <b>20</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>92</b> relevant lines,
-    <span class="green"><b>84</b> lines covered</span> and
-    <span class="red"><b>8</b> lines missed. </span>
+    <b>80</b> relevant lines,
+    <span class="green"><b>73</b> lines covered</span> and
+    <span class="red"><b>7</b> lines missed. </span>
     (<span class="green">
-  91.3%
+  91.25%
 </span>
 )
   </div>
@@ -83,23 +83,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#bd40c70d48d93e0e0cde3b611572602fe2849162" class="src_link" title="app/controllers/students_controller.rb">app/controllers/students_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">25</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.50</td>
-            
-          </tr>
-        
-          <tr class="t-file">
-            <td class="strong t-file__name"><a href="#e608475d5f4a0b9781a0a8ef5afa4d96b8857c68" class="src_link" title="app/controllers/teachers_controller.rb">app/controllers/teachers_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">55.56 %</td>
+            <td class="red strong cell--number t-file__coverage">65.00 %</td>
             <td class="cell--number">33</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">0.56</td>
+            <td class="cell--number">20</td>
+            <td class="cell--number">13</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">0.80</td>
             
           </tr>
         
@@ -375,8 +364,8 @@
   <div class="header">
     <h3>app/controllers/students_controller.rb</h3>
     <h4>
-      <span class="green">
-  100.0%
+      <span class="red">
+  65.0%
 </span>
 
       lines covered
@@ -385,9 +374,9 @@
     
 
     <div class="t-line-summary">
-      <b>14</b> relevant lines.
-      <span class="green"><b>14</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>20</b> relevant lines.
+      <span class="green"><b>13</b> lines covered</span> and
+      <span class="red"><b>7</b> lines missed.</span>
     </div>
 
     
@@ -420,35 +409,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="3">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="2" data-linenumber="3">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">    @students = Student.all</code>
+            <code class="ruby">    @search = Student.ransack(params[:q])</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="4">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="4">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    @students = @search.result(distinct: true)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="5">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="5">
+            <span class="hits">2</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">    if params[:q].blank?</code>
           </li>
         </div>
       
@@ -459,29 +448,29 @@
 
             
 
-            <code class="ruby">  def show</code>
+            <code class="ruby">      @students = Student.all</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="7">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    @student = Student.find(params[:student_id])</code>
+            <code class="ruby">    elsif params[:q][&quot;s&quot;] == &quot;otg asc&quot; </code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">      @students = Student.where(otg:true)</code>
           </li>
         </div>
       
@@ -492,29 +481,29 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    else #params[:q][&quot;s&quot;] == &quot;otg desc&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="10">
+            
             
 
             
 
-            <code class="ruby">  def edit</code>
+            <code class="ruby">      @students = Student.all</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="11">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="11">
+            
             
 
             
 
-            <code class="ruby">    @student = Student.find(params[:student_id])</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -547,313 +536,7 @@
 
             
 
-            <code class="ruby">  def update</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="15">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    student = Student.find(params[:student_id])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    updated_student = student.update(student_params)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="17">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    redirect_to &quot;/students/#{student.id}&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="18">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="19">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="20">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  private</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="21">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="22">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def student_params</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="23">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    params.permit(:name, :otg, :max_classes, :teacher_id)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="24">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="25">
-            
-            
-
-            
-
-            <code class="ruby">end</code>
-          </li>
-        </div>
-      
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="e608475d5f4a0b9781a0a8ef5afa4d96b8857c68">
-  <div class="header">
-    <h3>app/controllers/teachers_controller.rb</h3>
-    <h4>
-      <span class="red">
-  55.56%
-</span>
-
-      lines covered
-    </h4>
-
-    
-
-    <div class="t-line-summary">
-      <b>18</b> relevant lines.
-      <span class="green"><b>10</b> lines covered</span> and
-      <span class="red"><b>8</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
-    <ol>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="1">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">class TeachersController &lt; ApplicationController</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="2">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def index</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    @teachers = Teacher.order(:created_at)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="4">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="5">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="6">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">  def show</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="7">
-            
-            
-
-            
-
-            <code class="ruby">    @teacher = Teacher.find(params[:teacher_id])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def new</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="11">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="13">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def create</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="14">
-            
-            
-
-            
-
-            <code class="ruby">    new_teacher = Teacher.create(teacher_params)</code>
           </li>
         </div>
       
@@ -864,7 +547,7 @@
 
             
 
-            <code class="ruby">    redirect_to &#39;/teachers&#39;</code>
+            <code class="ruby">    @student = Student.find(params[:student_id])</code>
           </li>
         </div>
       
@@ -908,7 +591,7 @@
 
             
 
-            <code class="ruby">    @teacher = Teacher.find(params[:teacher_id])</code>
+            <code class="ruby">    @student = Student.find(params[:student_id])</code>
           </li>
         </div>
       
@@ -952,7 +635,7 @@
 
             
 
-            <code class="ruby">    teacher = Teacher.find(params[:teacher_id])</code>
+            <code class="ruby">    student = Student.find(params[:student_id])</code>
           </li>
         </div>
       
@@ -963,7 +646,7 @@
 
             
 
-            <code class="ruby">    updated_teacher = teacher.update(teacher_params)</code>
+            <code class="ruby">    updated_student = student.update(student_params)</code>
           </li>
         </div>
       
@@ -974,7 +657,7 @@
 
             
 
-            <code class="ruby">    redirect_to &quot;/teachers/#{teacher.id}&quot;</code>
+            <code class="ruby">    redirect_to &quot;/students/#{student.id}&quot;</code>
           </li>
         </div>
       
@@ -1029,7 +712,7 @@
 
             
 
-            <code class="ruby">  def teacher_params</code>
+            <code class="ruby">  def student_params</code>
           </li>
         </div>
       
@@ -1040,7 +723,7 @@
 
             
 
-            <code class="ruby">    params.permit(:name, :license_issued, :renew_license, :max_students)</code>
+            <code class="ruby">    params.permit(:name, :otg, :max_classes, :teacher_id)</code>
           </li>
         </div>
       

@@ -4,17 +4,25 @@
 <br>
 <br>
 <h1> Students of School of Learning </h1>
+<br>
+<br>
+<br>
+<%= sort_link(@search, :otg, "Off Track to Graduate") %>
+<br>
+<br>
 
 <div class="students">
   <% @students.each do |student| %>
     <div id="student-<%=student.id%>">
       Student Name: <%=link_to "#{student.name}", "/students/#{student.id}" %> <br>
       Off Track to Graduate: <% if student.otg == false %>
-                                <%= "No" %>
+                                <%= "No" %><br>
                              <% else %>
-                                <%= "Yes" %>
+                                <%= "YES" %><br>
                              <% end %>
       Max Classes: <%= student.max_classes %>
+      <br>
+      <br>
     </div>
   <% end %>
 </div>

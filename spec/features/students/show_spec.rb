@@ -120,6 +120,7 @@ RSpec.describe Student do
       expect(current_path).to eq("/students/#{student1.id}")
       expect(page).to have_content('Shirley Temple')
       expect(page).to have_content('No Max Classes: 7')
+      
       expect(page).to_not have_content(' No Max Classes: 6')
       expect(page).to_not have_content('Quincy Jones')
     end

@@ -1,6 +1,12 @@
 class StudentsController < ApplicationController
   def index
-    @students = Student.all
+    @search = Student.ransack(params[:q])
+    @students = @search.result(distinct: true)
+    if params[:q]["s"] == "otg asc" 
+      @students = Student.where(otg:true)
+    else #params[:q]["s"] == "otg desc" || params[:q].blank? 
+      @students = Student.all
+    end
   end
 
   def show
