@@ -24,6 +24,9 @@
       <%=link_to "Update #{student.name}", "/students/#{student.id}/edit" %>,
       <br>
       <br>
+      <%= link_to "Delete", "/students/#{student.id}", method: :delete %>
+      <br>
+      <br>
     </div>
   <% end %>
 </div>
