@@ -242,6 +242,8 @@
           null,
           1,
           1,
+          1,
+          1,
           null,
           null
         ]
@@ -252,7 +254,7 @@
           null
         ]
       },
-      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/models/teacher.rb": {
+      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/models/student.rb": {
         "lines": [
           1,
           1,
@@ -271,7 +273,7 @@
           null
         ]
       },
-      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/models/student.rb": {
+      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/models/teacher.rb": {
         "lines": [
           1,
           1,
@@ -283,18 +285,22 @@
           null
         ]
       },
-      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/controllers/teacher_students_controller.rb": {
+      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/controllers/students_controller.rb": {
         "lines": [
           1,
           1,
-          4,
-          4,
+          3,
+          null,
+          null,
+          1,
+          5,
           null,
           null,
           1,
           2,
           null,
           null,
+          1,
           1,
           1,
           1,
@@ -311,19 +317,6 @@
       "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/controllers/application_controller.rb": {
         "lines": [
           1,
-          null
-        ]
-      },
-      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/controllers/students_controller.rb": {
-        "lines": [
-          1,
-          1,
-          2,
-          null,
-          null,
-          1,
-          0,
-          null,
           null
         ]
       },
@@ -365,6 +358,6 @@
         ]
       }
     },
-    "timestamp": 1661468962
+    "timestamp": 1661527442
   }
 }

@@ -12,4 +12,9 @@ Off Track to Graduate: <% if @student.otg == false %>
 Max Classes: <%= @student.max_classes %>
 Teacher Name: <%= @student.teacher.name %>
 Enrollment Start Date: <%= @student.created_at.strftime("%m/%d/%y") %>
+<br>
+<br>
+<%= link_to "Update Student", "/students/#{@student.id}/edit" %>
+<br>
+<br>
 Last update: <%= @student.updated_at.strftime("%m/%d/%y")
