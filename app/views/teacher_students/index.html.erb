@@ -6,6 +6,13 @@
 <%= @teacher.name %> students<br>
 <br>
 <br>
+<%= form_with url: "/teachers/#{@teacher.id}/students", method: :get do |form| %>
+  <%= form.label :query, "Search for Students classes:" %>
+  <%= form.text_field :query %>
+  <%= form.submit "Search" %>
+<% end %>
+<br>
+<br>
 <%= link_to "Off Track to Graduate", :sort => "otg" %><br>
 <%= link_to "Sort Alphabetically", :sort => "alpha" %>
 <br>
