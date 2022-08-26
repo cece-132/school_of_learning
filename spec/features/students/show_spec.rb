@@ -75,5 +75,54 @@ RSpec.describe Student do
       click_on "Teachers"
       expect(current_path).to eq("/teachers")
     end
+
+    it 'has a link to update a student' do
+      teacher1 = Teacher.create!(name: "Phyllis Waters", license_issued: Time.now,
+        renew_license: false, max_students: 32)
+      teacher2 = Teacher.create!(name: "Paul Whitemon", license_issued: Time.now,
+        renew_license: false, max_students: 32)
+
+      student1 = Student.create!(name: "Quincy Jones", otg: false, max_classes: 6,
+                                teacher_id: teacher1.id)
+      student2 = Student.create!(name: "Aliya Blackmon", otg: false, max_classes: 8,
+                                teacher_id: teacher2.id)
+      student3 = Student.create!(name: "Prince Miles", otg: false, max_classes: 5,
+                                teacher_id: teacher1.id)
+
+      visit "/students/#{student1.id}"
+
+      expect(page).to have_link("Update Student")
+      click_link "Update Student"
+      expect(current_path).to eq("/students/#{student1.id}/edit")
+    end
+
+    it 'can update student information' do
+      teacher1 = Teacher.create!(name: "Phyllis Waters", license_issued: Time.now,
+        renew_license: false, max_students: 32)
+      teacher2 = Teacher.create!(name: "Paul Whitemon", license_issued: Time.now,
+        renew_license: false, max_students: 32)
+
+      student1 = Student.create!(name: "Quincy Jones", otg: false, max_classes: 6,
+                                teacher_id: teacher1.id)
+      student2 = Student.create!(name: "Aliya Blackmon", otg: false, max_classes: 8,
+                                teacher_id: teacher2.id)
+      student3 = Student.create!(name: "Prince Miles", otg: false, max_classes: 5,
+                                teacher_id: teacher1.id)
+
+      visit "/students/#{student1.id}/edit"
+
+      fill_in 'Name', with: 'Shirley Temple', exact: true
+      select 'false', from: "otg"
+      select "7", from: "max_classes", exact: true
+
+      click_button "Submit"
+
+      expect(current_path).to eq("/students/#{student1.id}")
+      expect(page).to have_content('Shirley Temple')
+      expect(page).to have_content('No Max Classes: 7')
+      
+      expect(page).to_not have_content(' No Max Classes: 6')
+      expect(page).to_not have_content('Quincy Jones')
+    end
   end
 end

@@ -3,16 +3,16 @@
 <br>
 <br>
 <br>
-Name: <%= @teacher.name %>
-Start Date: <%= @teacher.created_at.strftime("%m/%d/%y") %>
-License Issued: <%= @teacher.license_issued.strftime("%m/%d/%y") %>
+Name: <%= @teacher.name %><br>
+Start Date: <%= @teacher.created_at.strftime("%m/%d/%y") %><br>
+License Issued: <%= @teacher.license_issued.strftime("%m/%d/%y") %><br>
 License Renewal: <% if @teacher.renew_license == false %>
-                    <%= "No" %>
+                    <%= "No" %><br>
                   <% else %>
-                    <%= "Yes" %>
+                    <%= "Yes" %><br>
                   <% end %>
-Maximum Students: <%= @teacher.max_students %>
-Current Number of Students: <%= @teacher.students.count %>
+Maximum Students: <%= @teacher.max_students %><br>
+Current Number of Students: <%= @teacher.students.count %><br>
 <br>
 <br>
 <%= link_to "View Students", "/teachers/#{@teacher.id}/students" %>

@@ -1,6 +1,10 @@
 class TeachersController < ApplicationController
   def index
-    @teachers = Teacher.order(:created_at)
+    if !params["sort"]
+      @teachers = Teacher.all.order(:created_at)
+    else #params[:q]["s"] == "otg desc" || params[:q].blank? 
+      @teachers = Teacher.order(name: :asc)
+    end
   end
 
   def show

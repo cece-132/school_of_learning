@@ -2,6 +2,11 @@ class TeacherStudentsController < ApplicationController
   def index
     @teacher = Teacher.find(params[:teacher_id])
     @students = @teacher.students
+    if params["sort"]
+      @students = @students.where(otg:true)
+    else
+      @students = @teacher.students
+    end
   end
 
   def new
