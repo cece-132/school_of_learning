@@ -17,4 +17,7 @@ Enrollment Start Date: <%= @student.created_at.strftime("%m/%d/%y") %>
 <%= link_to "Update Student", "/students/#{@student.id}/edit" %>
 <br>
 <br>
+<%= link_to "Delete #{@student.name}", "/students/#{@student.id}", method: :delete %>
+<br>
+<br>
 Last update: <%= @student.updated_at.strftime("%m/%d/%y")

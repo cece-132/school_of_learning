@@ -20,7 +20,11 @@
                              <% else %>
                                 <%= "YES" %><br>
                              <% end %>
-      Max Classes: <%= student.max_classes %>
+      Max Classes: <%= student.max_classes %><br>
+      <%=link_to "Update #{student.name}", "/students/#{student.id}/edit" %>,
+      <br>
+      <br>
+      <%= link_to "Delete", "/students/#{student.id}", method: :delete %>
       <br>
       <br>
     </div>

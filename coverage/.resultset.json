@@ -235,11 +235,13 @@
           1,
           1,
           1,
-          null,
-          1,
-          1,
           1,
           null,
+          1,
+          1,
+          1,
+          null,
+          1,
           1,
           1,
           1,
@@ -254,7 +256,7 @@
           null
         ]
       },
-      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/models/teacher.rb": {
+      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/models/student.rb": {
         "lines": [
           1,
           1,
@@ -273,7 +275,7 @@
           null
         ]
       },
-      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/models/student.rb": {
+      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/models/teacher.rb": {
         "lines": [
           1,
           1,
@@ -285,20 +287,18 @@
           null
         ]
       },
-      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/controllers/teacher_students_controller.rb": {
+      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/controllers/students_controller.rb": {
         "lines": [
           1,
           1,
-          2,
-          2,
-          2,
+          9,
+          9,
+          9,
+          8,
           1,
           1,
-          0,
-          0,
           null,
           0,
-          null,
           null,
           null,
           null,
@@ -307,8 +307,19 @@
           null,
           null,
           1,
+          1,
+          null,
+          null,
+          1,
           0,
           0,
+          0,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           1,
@@ -324,8 +335,55 @@
           1,
           null
         ]
+      },
+      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/controllers/teachers_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1661547629
+    "timestamp": 1661552187
   }
 }

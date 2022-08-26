@@ -147,7 +147,6 @@ RSpec.describe Teacher do
       click_link "Sort Alphabetically"
       
       expect(student2.name).to appear_before(student3.name)
-save_and_open_page
       expect(student3.name).to appear_before(student1.name)
       expect(student1.name).to_not appear_before(student2.name)
 
