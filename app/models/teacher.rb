@@ -15,7 +15,11 @@ class Teacher < ApplicationRecord
   end
 
   def self.search_teacher(params)
-    where(name: params)
+    if where(name: params).count > 0
+      where(name: params)
+    else
+      where("name like ?", "%#{params}%")
+    end
   end
 
 end

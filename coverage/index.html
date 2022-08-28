@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-08-27T23:42:09-06:00">2022-08-27T23:42:09-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-08-27T23:50:05-06:00">2022-08-27T23:50:05-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="yellow">
-  83.0%
+  82.35%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.87
+         0.86
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>100</b> relevant lines,
-    <span class="green"><b>83</b> lines covered</span> and
-    <span class="red"><b>17</b> lines missed. </span>
+    <b>102</b> relevant lines,
+    <span class="green"><b>84</b> lines covered</span> and
+    <span class="red"><b>18</b> lines missed. </span>
     (<span class="yellow">
-  83.0%
+  82.35%
 </span>
 )
   </div>
@@ -127,12 +127,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#7fc89a24bcb8bdfa8189cb705abec5f53857f8fd" class="src_link" title="app/models/teacher.rb">app/models/teacher.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">83.33 %</td>
-            <td class="cell--number">21</td>
-            <td class="cell--number">12</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">0.83</td>
+            <td class="red strong cell--number t-file__coverage">78.57 %</td>
+            <td class="cell--number">25</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">11</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">0.79</td>
             
           </tr>
         
@@ -1225,8 +1225,8 @@
   <div class="header">
     <h3>app/models/teacher.rb</h3>
     <h4>
-      <span class="yellow">
-  83.33%
+      <span class="red">
+  78.57%
 </span>
 
       lines covered
@@ -1235,9 +1235,9 @@
     
 
     <div class="t-line-summary">
-      <b>12</b> relevant lines.
-      <span class="green"><b>10</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <b>14</b> relevant lines.
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
 
     
@@ -1441,18 +1441,18 @@
 
             
 
-            <code class="ruby">    where(name: params)</code>
+            <code class="ruby">    if where(name: params).count &gt; 0</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="19">
+          <li class="missed" data-hits="0" data-linenumber="19">
             
             
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      where(name: params)</code>
           </li>
         </div>
       
@@ -1463,12 +1463,56 @@
 
             
 
+            <code class="ruby">    else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="21">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      where(&quot;name like ?&quot;, &quot;%#{params}%&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="21">
+          <li class="never" data-hits="" data-linenumber="25">
             
             
 
