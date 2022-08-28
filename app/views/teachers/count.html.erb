@@ -4,8 +4,6 @@
 <br>
 <table>
 <br>
-<%= link_to "Sort Alphabetically", :sort => "name" %>
-<%= link_to "Sort by Student Count", :sort => "count" %>
 <br>
 <br>
 <h1> Teachers of School of Learning </h1>
@@ -16,9 +14,12 @@
       <%= link_to "#{teacher.name}", "/teachers/#{teacher.id}" %>,
       Started At: <%= teacher.created_at.strftime("%m/%d/%y") %> <br>
       <br>
+      Student Count: <%= teacher.students.count %>
       <br>
-      <%= link_to "Update #{teacher.name}", "/teachers/#{teacher.id}/edit" %><br>
-      <%= link_to "Delete", "/teachers/#{teacher.id}", method: :delete %>
+      <%= link_to "Update #{teacher.name}", "/teachers/#{teacher.id}/edit" %> <br>
+      <%= link_to "Delete", "/teachers/#{teacher.id}", method: :delete %> <br>
+      <br>
+      <br>
     </div>
   <% end %>
 </div>

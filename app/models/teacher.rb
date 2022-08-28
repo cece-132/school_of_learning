@@ -10,4 +10,8 @@ class Teacher < ApplicationRecord
     self.students.where('max_classes >= ?', search_params).order(:max_classes)
   end
 
+  def self.order_student_count
+    self.joins(:students).order(:students).uniq
+  end
+
 end
