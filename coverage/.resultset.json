@@ -270,22 +270,6 @@
           1,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null
         ]
       },
@@ -307,52 +291,8 @@
           1,
           null
         ]
-      },
-      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/controllers/teacher_students_controller.rb": {
-        "lines": [
-          1,
-          1,
-          2,
-          2,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          2,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1661648609
+    "timestamp": 1661649542
   }
 }
