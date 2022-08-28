@@ -7,8 +7,8 @@ class TeachersController < ApplicationController
       else #params[:sort][:count]
         redirect_to "/teachers/count"
       end
-    # elsif params[:q]["s"] == "otg desc" || params[:q].blank? 
-    #   @teachers = Teacher.all.order(name: :asc)
+    elsif !params[:name].blank?
+      @teachers = Teacher.search_teacher(params[:name])
     else
       @teachers = Teacher.all.order(:created_at)
     end

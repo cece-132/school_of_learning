@@ -8,6 +8,14 @@
 <%= link_to "Sort by Student Count", :sort => "count" %>
 <br>
 <br>
+<br>
+<%= form_with url: "/teachers", method: :get do |form| %>
+  <%= form.label :name, "Search Teachers" %>
+  <%= form.text_field :name %>
+  <%= form.submit "Search" %>
+<% end %>
+<br>
+<br>
 <h1> Teachers of School of Learning </h1>
 
 <div class="teachers">
