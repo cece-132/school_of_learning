@@ -49,5 +49,25 @@ RSpec.describe Teacher, type: :model do
         expect(Teacher.order_student_count).to eq(expected)
       end
     end
+
+    describe 'search_teacher(params)' do
+      it 'can find exact name matches' do
+        teacher1 = Teacher.create!(name: "Phyllis Waters", license_issued: Time.now,
+          renew_license: false, max_students: 32)
+        teacher2 = Teacher.create!(name: "Alpha Whitemon", license_issued: Time.now,
+          renew_license: false, max_students: 32)
+
+        expect(Teacher.search_teacher("Alpha Whitemon")).to eq([teacher2])
+      end
+
+      it 'can find names with partial searches' do
+        teacher1 = Teacher.create!(name: "Allen Waters", license_issued: Time.now,
+          renew_license: false, max_students: 32)
+        teacher2 = Teacher.create!(name: "Alpha Whitemon", license_issued: Time.now,
+          renew_license: false, max_students: 32)
+
+        expect(Teacher.search_teacher("Al")).to eq([teacher1, teacher2])
+      end
+    end
   end
 end
