@@ -1,6 +1,7 @@
 class TeacherStudentsController < ApplicationController
   def index
     @teacher = Teacher.find(params[:teacher_id])
+    @students = @teacher.students
       if !params[:sort].blank?
         if params["sort"]["alpha"]
           @students = @students.order(:name)

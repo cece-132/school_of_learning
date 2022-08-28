@@ -236,6 +236,7 @@
           1,
           1,
           1,
+          1,
           null,
           1,
           1,
@@ -256,6 +257,82 @@
           null
         ]
       },
+      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/models/student.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/spec/models/teacher_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/models/teacher.rb": {
         "lines": [
           1,
@@ -270,29 +347,16 @@
           1,
           null,
           null,
-          null
-        ]
-      },
-      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/tanjiro/Desktop/Ruby_Learning/2Mod/projects/school_of_learning/app/models/student.rb": {
-        "lines": [
-          1,
-          1,
-          1,
           1,
           1,
           null,
-          1,
+          null,
+          null,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1661649542
+    "timestamp": 1661664132
   }
 }
