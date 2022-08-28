@@ -1,16 +1,19 @@
 class TeacherStudentsController < ApplicationController
   def index
     @teacher = Teacher.find(params[:teacher_id])
-    @students = @teacher.students
-    if !params[:sort].blank?
-      if params["sort"]["alpha"]
-        @students = @students.order(:name)
-      elsif params["sort"]["otg"]
-        @students = @students.where(otg:true)
+      if !params[:sort].blank?
+        if params["sort"]["alpha"]
+          @students = @students.order(:name)
+        elsif params["sort"]["otg"]
+          @students = @students.where(otg:true)
+        else
+          @students = @teacher.students
+        end
+      elsif !params[:search].blank?
+        @students = @teacher.student_classes(params[:search])
       else
         @students = @teacher.students
       end
-    end
   end
 
   def new
@@ -25,6 +28,7 @@ class TeacherStudentsController < ApplicationController
   private
 
   def teacher_student_params
-    params.permit(:name, :otg, :max_classes, :teacher_id)
+    params.permit(:name, :otg, :max_classes, :teacher_id, :search)
   end
+
 end

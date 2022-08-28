@@ -151,5 +151,32 @@ RSpec.describe Teacher do
       expect(student1.name).to_not appear_before(student2.name)
 
     end
+
+    it 'can search for students by the number of classes' do
+      teacher1 = Teacher.create!(name: "Phyllis Waters", license_issued: Time.now,
+        renew_license: false, max_students: 32)
+      teacher2 = Teacher.create!(name: "Paul Whitemon", license_issued: Time.now,
+        renew_license: false, max_students: 32)
+
+      student1 = Student.create!(name: "Quincy Jones", otg: false, max_classes: 6,
+                                teacher_id: teacher1.id)
+      student2 = Student.create!(name: "Aliya Blackmon", otg: true, max_classes: 8,
+                                teacher_id: teacher1.id)
+      student3 = Student.create!(name: "Prince Miles", otg: true, max_classes: 5,
+                                teacher_id: teacher1.id)
+
+      visit "/teachers/#{teacher1.id}/students"
+
+      fill_in :search, with: 6, exact: true
+      
+      click_on "Search"
+
+      within ".students" do
+        expect(page).to have_content("Quincy Jones")
+        expect(page).to have_content("Aliya Blackmon")
+        expect(page).to_not have_content("Prince Miles")
+      end
+
+    end
   end
 end

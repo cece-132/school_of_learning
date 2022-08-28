@@ -5,4 +5,9 @@ class Teacher < ApplicationRecord
   validates_presence_of :max_students
 
   has_many :students
+
+  def student_classes(search_params)
+    self.students.where('max_classes >= ?', search_params).order(:max_classes)
+  end
+
 end
