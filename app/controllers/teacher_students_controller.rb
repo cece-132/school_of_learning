@@ -1,7 +1,6 @@
 class TeacherStudentsController < ApplicationController
   def index
     @teacher = Teacher.find(params[:teacher_id])
-    @students = @teacher.students
       if !params[:sort].blank?
         if params["sort"]["alpha"]
           @students = @students.order(:name)
@@ -10,8 +9,10 @@ class TeacherStudentsController < ApplicationController
         else
           @students = @teacher.students
         end
+      elsif !params[:search].blank?
+        @students = @teacher.student_classes(params[:search])
       else
-        Teacher.search_students(params[:search], params[:teacher_id])
+        @students = @teacher.students
       end
   end
 

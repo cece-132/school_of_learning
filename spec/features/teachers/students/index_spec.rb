@@ -167,13 +167,13 @@ RSpec.describe Teacher do
 
       visit "/teachers/#{teacher1.id}/students"
 
-      fill_in :query, with: 6, exact: true
-      save_and_open_page
+      fill_in :search, with: 6, exact: true
+      
       click_on "Search"
 
       within ".students" do
         expect(page).to have_content("Quincy Jones")
-        expect(page).to_not have_content("Aliya Blackmon")
+        expect(page).to have_content("Aliya Blackmon")
         expect(page).to_not have_content("Prince Miles")
       end
 
