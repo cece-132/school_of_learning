@@ -11,7 +11,9 @@ class Teacher < ApplicationRecord
   end
 
   def self.order_student_count
-    self.joins(:students).order(:students).uniq
+    left_joins(:students).group(:id).order('count(students.id) desc')    # self.joins(:students).order(:students).uniq
+    # joins(:students).distinct.select('teachers.*, count(students) as stud_count').group(:id).order(stud_count: :desc)
+
   end
 
 end
