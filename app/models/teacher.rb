@@ -11,9 +11,15 @@ class Teacher < ApplicationRecord
   end
 
   def self.order_student_count
-    left_joins(:students).group(:id).order('count(students.id) desc')    # self.joins(:students).order(:students).uniq
-    # joins(:students).distinct.select('teachers.*, count(students) as stud_count').group(:id).order(stud_count: :desc)
+    left_joins(:students).group(:id).order('count(students.id) desc') 
+  end
 
+  def self.search_teacher(params)
+    if where(name: params).count > 0
+      where(name: params)
+    else
+      where("name like ?", "%#{params}%")
+    end
   end
 
 end
