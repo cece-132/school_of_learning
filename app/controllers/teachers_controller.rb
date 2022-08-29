@@ -1,17 +1,26 @@
 class TeachersController < ApplicationController
   def index
     @teachers = Teacher.all.order(:created_at)
-    if !params["sort"].blank?
-      if params["sort"]["name"]
-        @teachers = Teacher.all.order(:name)
-      else #params[:sort][:count]
-        redirect_to "/teachers/count"
-      end
+    if params[:sort] == 'alpha'
+      @teachers = Teacher.all.order(:name)
+    elsif params[:sort] == 'student_count'
+      @teachers = Teacher.order_student_count
     elsif !params[:name].blank?
       @teachers = Teacher.search_teacher(params[:name])
     else
       @teachers = Teacher.all.order(:created_at)
     end
+    # if !params["sort"].blank?
+    #   if params["sort"]["name"]
+    #     @teachers = Teacher.all.order(:name)
+    #   else #params[:sort][:count]
+    #     redirect_to "/teachers/count"
+    #   end
+    # elsif !params[:name].blank?
+    #   @teachers = Teacher.search_teacher(params[:name])
+    # else
+    #   @teachers = Teacher.all.order(:created_at)
+    # end
   end
 
   def show

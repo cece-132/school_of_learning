@@ -1,13 +1,11 @@
 class StudentsController < ApplicationController
   def index
-    @search = Student.ransack(params[:q])
-    @students = @search.result(distinct: true)
-    if params[:q].blank?
-      @students = @students.order(:created_at)
-    elsif params[:q]["s"] == "otg asc" 
-      @students = @students.where(otg:true)
-    else #params[:q]["s"] == "otg desc"
-      @students = @students.order(:created_at)
+    @students = Student.order(:name)
+
+    if params[:sort]
+      @students = Student.where(otg:true)
+    else 
+      @students = Student.order(:created_at)
     end
   end
 
@@ -37,3 +35,5 @@ class StudentsController < ApplicationController
     params.permit(:name, :otg, :max_classes, :teacher_id)
   end
 end
+
+# <%= sort_link(@search, :otg, "Off Track to Graduate") %>
