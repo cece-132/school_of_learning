@@ -22,11 +22,12 @@
     <div id="student-<%=student.id%>">
       Student Name: <%=link_to "#{student.name}", "/students/#{student.id}" %> <br>
       Off Track to Graduate: <% if student.otg == false %>
-                                <%= "No" %>
+                                <%= "No" %> <br>
                              <% else %>
-                                <%= "Yes" %>
+                                <%= "Yes" %> <br>
                              <% end %>
-      Max Classes: <%= student.max_classes %>
+      Max Classes: <%= student.max_classes %> <br>
+      <br>
     </div>
   <% end %>
 </div>

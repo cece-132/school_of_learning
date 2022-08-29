@@ -23,10 +23,10 @@
     <div id="teacher-<%=teacher.id%>">
       <%= link_to "#{teacher.name}", "/teachers/#{teacher.id}" %>,
       Started At: <%= teacher.created_at.strftime("%m/%d/%y") %> <br>
+      <%= link_to "Update #{teacher.name}", "/teachers/#{teacher.id}/edit" %> <br>
+      <%= link_to "Delete", "/teachers/#{teacher.id}", method: :delete %> <br>
       <br>
       <br>
-      <%= link_to "Update #{teacher.name}", "/teachers/#{teacher.id}/edit" %><br>
-      <%= link_to "Delete", "/teachers/#{teacher.id}", method: :delete %>
     </div>
   <% end %>
 </div>
