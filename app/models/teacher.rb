@@ -7,7 +7,7 @@ class Teacher < ApplicationRecord
   has_many :students
 
   def student_classes(search_params)
-    self.students.where('max_classes >= ?', search_params).order(:max_classes)
+    students.where('max_classes >= ?', search_params.to_i).order(:max_classes)
   end
 
   def self.order_student_count

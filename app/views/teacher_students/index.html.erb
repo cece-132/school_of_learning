@@ -6,15 +6,15 @@
 <%= @teacher.name %> students<br>
 <br>
 <br>
-<%= form_with url: "/teachers/#{@teacher.id}/students", method: :get do |form| %>
+<%= form_with url: "/teachers/#{@teacher.id}/students?search=otg", method: :get, local: :true do |form| %>
   <%= form.label :search, "Search for Students classes:" %>
   <%= form.text_field :search %>
   <%= form.submit "Search" %>
 <% end %>
 <br>
 <br>
-<%= link_to "Off Track to Graduate", :sort => "otg" %><br>
-<%= link_to "Sort Alphabetically", :sort => "alpha" %>
+<%= link_to "Off Track to Graduate", "/teachers/#{@teacher.id}/students?sort=otg" %><br>
+<%= link_to "Sort Alphabetically", "/teachers/#{@teacher.id}/students?sort=alpha" %>
 <br>
 <br>
 <div class="students">

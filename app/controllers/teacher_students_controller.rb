@@ -4,7 +4,7 @@ class TeacherStudentsController < ApplicationController
     @students = @teacher.students
       if !params[:sort].blank?
         if params["sort"]["alpha"]
-          @students = @students.order(:name)
+          @students = @teacher.students.order(:name)
         elsif params["sort"]["otg"]
           @students = @students.where(otg:true)
         else
@@ -13,7 +13,7 @@ class TeacherStudentsController < ApplicationController
       elsif !params[:search].blank?
         @students = @teacher.student_classes(params[:search])
       else
-        @students = @teacher.students
+        @students
       end
   end
 
